@@ -19,10 +19,12 @@ function startTime() {
     var h = today.getHours();
     var m = today.getMinutes();
     var s = today.getSeconds();
-
+    if (m < 10){ m = "0" + m;}
     var time = h + ":" + m + ":" + s;
     var oTime = h + ":" + m;
+    console.log(oTime);
     if (customTime === time) {
+        console.log("alarm!!!!");
       player.play("alarm.mp3", function(err){
         if(err) throw err
         })
